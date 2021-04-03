@@ -1,6 +1,6 @@
 """
 Nome Progetto:      ALBASOLVING WHATSAPP CHATBOT v1.
-Autore:             Giovanni Almirante
+Autore:             Almyyyy
 Data di Inizio:     26/02/2021
 
 Descrizione:
