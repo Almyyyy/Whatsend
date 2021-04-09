@@ -6,21 +6,27 @@ Start Date:             02/26/2021
 Description:
 This program can be used to send a message to a list of phone numbers using WhatsApp Web.
 
-How it works:
-
-
-Le librerie utilizzate:
-urllib      per la codifica sottoforma di URI del messaggio incapsulato nell'URL
-time        per dare una pausa tra un messaggio e l'altro a causa delle policy antibot di Facebook
-selenium    per integrare gli eventi del browser in python
+Used Modules:
+urllib      used to encode a text of any type in url-encoding (percent-encoding)
+time        just for code timing :) ...and Facebook/WhatsApp anti-bot policies
+selenium    to embed browser event in Python
+            note:       to use this library you need to download the latest chosen browser's webdriver
+                        you can find it here: https://selenium-python.readthedocs.io/installation.html#drivers
+                        and set it 
+            
             N.B.    per utilizzare selenium è necessario scaricare il webdriver del browser che utilizzerai
                     dal sito https://selenium-python.readthedocs.io/installation.html 
                     ed impostarli come variabili d'ambiente (PATH)
 
+How it works:
+
+
+
 Changelog:
 
 - v0.1 project draft with main functions
-- v1.1 il programma ora attende l'invio del messaggio prima di passare al successivo
+- v0.1.1 il programma ora attende l'invio del messaggio prima di passare al successivo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- v0.2 code in now translated from Italian to English because is cool and more people can benefit B) 
 
 
 
