@@ -26,7 +26,7 @@ SOFTWARE.
 Project Name:           Whatsend
 Author:                 Almyyyy
 Start Date:             02/26/2021
-Description: This program can be used to send a message to a list of phone numbers using WhatsApp Web.
+Description: A python bot that uses WhatsApp Web to send a message to a list of phone numbers
 
 
 
