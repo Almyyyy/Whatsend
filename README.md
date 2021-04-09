@@ -67,7 +67,7 @@ Now there is one last thing to do, clicks! And here Selenium module comes in.
 ###
 Briefly. Selenium is able to search for objects in the HTML DOM and emulate events... like clicks! (and other stuff that we will need further on.
 ###
-With that being said let's jump into the code! :)
+With that being said let's jump into the code! :man_technologist:
 
 #
 
@@ -75,7 +75,7 @@ With that being said let's jump into the code! :)
 
 - [x] v0.1 project draft with main functions
 - [x] v0.1.1 minor bug fix (like internet signal loss or inexitent phone number crashes)
-- [x] v0.2 code is now translated from Italian to English because is cool and more people can benefit B) 
+- [x] v0.2 code is now translated from Italian to English because is cool and more people can benefit :sunglasses:
 - [ ] todo give the program a gui
 
 
