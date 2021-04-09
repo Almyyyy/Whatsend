@@ -3,8 +3,12 @@ Project Name:           Whatsend
 Author:                 Almyyyy
 Start Date:             02/26/2021
 
+
+
 Description:
 This program can be used to send a message to a list of phone numbers using WhatsApp Web.
+
+
 
 Used Modules:
 urllib      used to encode a text of any type in url-encoding (percent-encoding)
@@ -13,15 +17,18 @@ selenium    to embed browser event in Python
             note:       to use this library you need to download the latest chosen browser's webdriver
                         (you can find it here: https://selenium-python.readthedocs.io/installation.html#drivers)
                         and set it as a environment variable (PATH)
-
+                        
+                        
+                  
 How it works:
+Basically take a look at this WhatsApp Web Url: https://web.whatsapp.com/send?phone=+391238956456&text=test
 
 
 
 Changelog:
 
 - v0.1 project draft with main functions
-- v0.1.1 il programma ora attende l'invio del messaggio prima di passare al successivo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- v0.1.1 il programma ora attende l'invio del messaggio prima di passare al successivo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   code may still buggy
 - v0.2 code in now translated from Italian to English because is cool and more people can benefit B) 
 
 
