@@ -11,12 +11,8 @@ urllib      used to encode a text of any type in url-encoding (percent-encoding)
 time        just for code timing :) ...and Facebook/WhatsApp anti-bot policies
 selenium    to embed browser event in Python
             note:       to use this library you need to download the latest chosen browser's webdriver
-                        you can find it here: https://selenium-python.readthedocs.io/installation.html#drivers
-                        and set it 
-            
-            N.B.    per utilizzare selenium è necessario scaricare il webdriver del browser che utilizzerai
-                    dal sito https://selenium-python.readthedocs.io/installation.html 
-                    ed impostarli come variabili d'ambiente (PATH)
+                        (you can find it here: https://selenium-python.readthedocs.io/installation.html#drivers)
+                        and set it as a environment variable (PATH)
 
 How it works:
 
