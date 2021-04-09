@@ -58,7 +58,7 @@ Changelog:
 
 - v0.1 project draft with main functions
 - v0.1.1 minor bug fix (like internet signal loss or inexitent phone number crashes)
-- v0.2 code in now translated from Italian to English because is cool and more people can benefit B) 
+- v0.2 code is now translated from Italian to English because is cool and more people can benefit B) 
 
 
 
