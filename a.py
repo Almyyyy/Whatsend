@@ -1,10 +1,13 @@
 """
-Nome Progetto:      ALBASOLVING WHATSAPP CHATBOT v1.
-Autore:             Almyyyy
-Data di Inizio:     26/02/2021
+Project Name:           Whatsend
+Author:                 Almyyyy
+Start Date:             02/26/2021
 
-Descrizione:
-Il programma è utilizzato per inviare un corpo di messaggio unico ad una lista di numeri via WhatsApp.
+Description:
+This program can be used to send a message to a list of phone numbers using WhatsApp Web.
+
+How it works:
+
 
 Le librerie utilizzate:
 urllib      per la codifica sottoforma di URI del messaggio incapsulato nell'URL
@@ -16,6 +19,7 @@ selenium    per integrare gli eventi del browser in python
 
 Changelog:
 
+- v0.1 project draft with main functions
 - v1.1 il programma ora attende l'invio del messaggio prima di passare al successivo
 
 
