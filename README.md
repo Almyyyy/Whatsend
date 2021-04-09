@@ -52,9 +52,11 @@ https://web.whatsapp.com/send?phone=+391238956456&text=this.+is.+a.+complex.+mes
 ###
 Did you notice something? Ok, let me break it down 
 
-https://web.whatsapp.com/ | send?phone=+391238956456 | &text=this.+is.+a.+complex.+message%21
--|-|-
-the basic WhatsApp Web Url | the recipient phone number argument | the message encoded in pecent-encoding
+Code | Description
+-|-
+https://web.whatsapp.com/ | the basic WhatsApp Web Url
+send?phone=+391238956456 | the recipient phone number argument
+&text=this.+is.+a.+complex.+message%21 | the message encoded in pecent-encoding
 
 
 If you put that Url in your favourite browser (maybe changing the phone number into an existing one) it will pop up a classic WhatsApp chat window with the message already written. Note: you must be logged in.
@@ -67,14 +69,14 @@ Briefly. Selenium is able to search for objects in the HTML DOM and emulate even
 ###
 With that being said let's jump into the code! :)
 
+#
+
+### Changelog:
+
+- [x] v0.1 project draft with main functions
+- [x] v0.1.1 minor bug fix (like internet signal loss or inexitent phone number crashes)
+- [x] v0.2 code is now translated from Italian to English because is cool and more people can benefit B) 
+- [] d
 
 
-Changelog:
-
-- v0.1 project draft with main functions
-- v0.1.1 minor bug fix (like internet signal loss or inexitent phone number crashes)
-- v0.2 code is now translated from Italian to English because is cool and more people can benefit B) 
-
-
-
-{code may still buggy}
+### {code may still buggy} <3
