@@ -50,14 +50,21 @@ Basically take a look at this WhatsApp Web Url:
 ###
 https://web.whatsapp.com/send?phone=+391238956456&text=this.+is.+a.+complex.+message%21
 ###
-Did you notice something? Ok, let me break it down ->       https://web.whatsapp.com/   ->   the basic WhatsApp Web Url              
-                                                   ->       send?phone=+391238956456   ->   the recipient phone number argument      
-                                                   ->       &text=this.+is.+a.+complex.+message%21   ->   the message encoded in pecent-encoding
-If you put that Url in your favourite browser (maybe changing the phone number into an existing one)
-it will pop up a classic WhatsApp chat window with the message already written. (note: you must be logged in)                                       
+Did you notice something? Ok, let me break it down 
+
+https://web.whatsapp.com/ | send?phone=+391238956456 | &text=this.+is.+a.+complex.+message%21
+-|-|-
+the basic WhatsApp Web Url | the recipient phone number argument | the message encoded in pecent-encoding
+
+
+If you put that Url in your favourite browser (maybe changing the phone number into an existing one) it will pop up a classic WhatsApp chat window with the message already written. Note: you must be logged in.
+###
 Clear, right? So... Why not generate that Url programmatically?
+###
 Now there is one last thing to do, clicks! And here Selenium module comes in.
+###
 Briefly. Selenium is able to search for objects in the HTML DOM and emulate events... like clicks! (and other stuff that we will need further on.
+###
 With that being said let's jump into the code! :)
 
 
