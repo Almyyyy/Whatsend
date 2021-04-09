@@ -22,7 +22,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Description
+
+
+### Description
 A python bot that uses WhatsApp Web to send a message to a list of phone numbers
 
 Project Name | Author | Start Date
@@ -31,13 +33,15 @@ Whatsend | Almyyyy | 02/26/2021
 
 
 
-##Used Modules:
-urllib      used to encode a text of any type in url-encoding (percent-encoding)
-time        just for code timing :) ...and Facebook/WhatsApp anti-bot policies
-selenium    to embed browser event in Python
-            note:       to use this library you need to download the latest chosen browser's webdriver
-                        (you can find it here: https://selenium-python.readthedocs.io/installation.html#drivers)
-                        and set it as a environment variable (PATH)
+### Used Modules
+
+Module Name | Description
+-|-
+urllib | used to encode a text of any type in url-encoding (percent-encoding)
+time | just for code timing :) ...and Facebook/WhatsApp anti-bot policies
+selenium | to embed browser event in Python
+            note: to use the selenium library you need to download the latest chosen browser's webdriver
+            you can find it [here](https://selenium-python.readthedocs.io/installation.html#drivers) and set it as a environment variable (PATH)
                         
                         
                   
