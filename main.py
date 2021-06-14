@@ -9,7 +9,7 @@ from methods import *
 
     # init window #
 window = Tk()
-window.title("Whatsend v1.0 - prerelease") #window name
+window.title("Whatsend v0.3 - prerelease") #window name
 window.resizable(False, False) #block window resizing
 tab_control = ttk.Notebook(window) #create tabs inside window
 
