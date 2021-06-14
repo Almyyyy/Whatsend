@@ -7,16 +7,17 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 
 
+
 browser = webdriver.Chrome(executable_path=r"webdrivers\chrome\windows\chromedriver.exe")
 browser.get("https://web.whatsapp.com/")
 
 
 
-def gen_link(num, msg):
+def genLink(num, msg):
     link = 'https://web.whatsapp.com/send?phone=' + num + '&text=' + msg
     return link
 
-def encode_msg(m):
+def encodeMsg(m):
     for x in range(0, len(m), 1024):
         buf = m[x:x+1024]
         e = urllib.parse.quote_plus(buf)
@@ -74,6 +75,13 @@ def delForMe(xpath):
     delforme = browser.find_element_by_xpath("/html/body/div/div[1]/span[2]/div[1]/span/div[1]/div/div/div/div/div[3]/div/div[1]/div")
     delforme.click()
 
+def waitForSending():
+    while True:
+        try:
+            a = browser.find_element_by_xpath("//span[@data-testid='msg-time']")
+        except:
+            break
+
 def saveLog(num):
     with open("log.txt", "a+") as file_object:
         file_object.seek(0)
@@ -86,7 +94,7 @@ def saveLog(num):
 
 def vai(numberslist, message):
 
-    msg = encode_msg(message)
+    msg = encodeMsg(message)
     
     with open(numberslist) as fp:
         num = fp.readline()
@@ -97,7 +105,7 @@ def vai(numberslist, message):
             print("Phone number {}: {}".format(cnt, num))
 
             try:
-                browser.get(gen_link(num, msg))
+                browser.get(genLink(num, msg))
                 #browser.save_screenshot("num.png")
                 ctrl = True
 
@@ -114,13 +122,11 @@ def vai(numberslist, message):
                             button = browser.find_element_by_class_name('_1E0Oz')
                             button.click()
 
-                            while ctrl:
-                                try:
-                                    a = browser.find_element_by_xpath("//span[@data-testid='msg-time']")
-                                except:
-                                    print("Sent!")
-                                    delForMe(lastMessage())
-                                    ctrl = False
+                            waitForSending()
+
+                            print("Sent!")
+
+                            delForMe(lastMessage())
 
                             time.sleep(30)
                             ctrl = False
