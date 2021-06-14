@@ -1,5 +1,6 @@
 import urllib.parse
 import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,10 +8,8 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-
 browser = webdriver.Chrome(executable_path=r"webdrivers\chrome\windows\chromedriver.exe")
 browser.get("https://web.whatsapp.com/")
-
 
 
 def genLink(num, msg):
@@ -113,7 +112,13 @@ def sendMsg():
         return False
 
 
-def vai(numberslist, message):
+def mainThread(numberslist, message):
+    MAX = 0
+    file = open(numberslist, "r")
+    for line in file:
+        if line != "\n":
+            MAX += 1
+    file.close()
 
     msg = encodeMsg(message)
     
@@ -128,7 +133,7 @@ def vai(numberslist, message):
             try:
                 browser.get(genLink(num, msg))
                 #browser.save_screenshot("num.png")
-
+                print("Progress: " + str(100 / MAX * cnt) + "%")
                 while startCheck(num):
                     if sendMsg():
                         print("Sent!")
@@ -146,3 +151,6 @@ def vai(numberslist, message):
 
 
     #browser.close()
+
+
+
