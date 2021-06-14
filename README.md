@@ -76,8 +76,8 @@ With that being said let's jump into the code! :man_technologist:
 - [x] v0.1 project draft with main functions
 - [x] v0.1.1 minor bug fix (like internet signal loss or inexitent phone number crashes)
 - [x] v0.2 code is now translated from Italian to English because is cool and more people can benefit :sunglasses:
-- [x] v0.3 now the program has a GUI, the code is better written and has been introduced a function that eliminates the message "for me" once sent
-- [ ] introduce threading, improve the gui and error handling
+- [x] v0.3 now the program has a GUI, the code is written better and has been introduced a function that eliminates the message "for me" once sent
+- [ ] introduce threading, improve gui and error handling
 
 
 ### {code may still buggy} :purple_heart:
