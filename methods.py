@@ -82,6 +82,8 @@ def saveLog(num):
             file_object.write("\n")
         file_object.write("num")
 
+
+
 def vai(numberslist, message):
 
     msg = encode_msg(message)
