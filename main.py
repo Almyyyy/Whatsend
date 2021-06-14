@@ -5,6 +5,8 @@ from tkinter import ttk
 from tkinter import *
 from methods import *
 
+import threading
+
 
 
     # init window #
@@ -70,18 +72,18 @@ space2.grid(column=0, row=5)
 
 
 
-#start button
-def start():
-    if not filedir.get() or len(txt.get("1.0", "end-1c")) == 0:
-        print("not ok")
-        #startbtn["state"] = "disabled"
-    else:
-        vai(filedir.get(), txt.get("1.0", "end-1c"))
-        print(filedir.get())
-        print(txt.get("1.0", "end-1c"))
-        #startbtn["state"] = "normal"
 
-startbtn = Button(tab1, text="Start", width=10, command=start)
+#start button
+def startStop():
+    if filedir.get() and len(txt.get("1.0", "end-1c")) > 0 and startbtn["text"] == "Start":
+        startbtn["text"] = "Stop"
+        x = threading.Thread(target=mainThread, args=(filedir.get(), txt.get("1.0", "end-1c")))
+        x.start()
+    elif startbtn["text"] == "Stop":
+        startbtn["text"] = "Start"
+        #todo: kill thread safely
+        
+startbtn = Button(tab1, text="Start", width=10, command=startStop)
 startbtn.grid(column=0, row=6, columnspan=2)
 
 
@@ -92,8 +94,8 @@ space3.grid(column=0, row=7)
 
 bar = Progressbar(tab1, length=350)
 bar.grid(column=0, row=8, columnspan=2)
-bar['value'] = 20
-
+bar['value'] = 50
+#tab1.update_idletasks()
 
 
 
