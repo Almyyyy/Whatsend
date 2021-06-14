@@ -62,34 +62,55 @@ def lastMessage():
     return msg      
 
 def delForMe(xpath):
-    div = WebDriverWait(browser, 30).until(expected_conditions.presence_of_element_located((By.XPATH, xpath)))
-    hover = ActionChains(browser).move_to_element(div)                                                                              
-    hover.perform()
+    try:
+        div = WebDriverWait(browser, 30).until(expected_conditions.presence_of_element_located((By.XPATH, xpath)))
+        hover = ActionChains(browser).move_to_element(div)                                                                              
+        hover.perform()
 
-    arrow = browser.find_element_by_class_name('QhSbI')
-    arrow.click()
+        arrow = browser.find_element_by_class_name('QhSbI')
+        arrow.click()
 
-    delbtn = browser.find_element_by_xpath("/html/body/div/div[1]/span[4]/div/ul/div/li[5]")
-    delbtn.click()
+        delbtn = browser.find_element_by_xpath("/html/body/div/div[1]/span[4]/div/ul/div/li[5]")
+        delbtn.click()
 
-    delforme = browser.find_element_by_xpath("/html/body/div/div[1]/span[2]/div[1]/span/div[1]/div/div/div/div/div[3]/div/div[1]/div")
-    delforme.click()
+        delforme = browser.find_element_by_xpath("/html/body/div/div[1]/span[2]/div[1]/span/div[1]/div/div/div/div/div[3]/div/div[1]/div")
+        delforme.click()
+    except:
+        print("- error in function delForMe -")
 
-def waitForSending():
+def startCheck(num):
     while True:
         try:
-            a = browser.find_element_by_xpath("//span[@data-testid='msg-time']")
+            browser.find_element_by_class_name('_3SRfO') #generic error banner
+
+            try:
+                browser.find_element_by_class_name('_1ENRV') #signal loss banner
+
+            except:
+                with open("log.txt", "a+") as file_object:
+                    file_object.seek(0)
+                    data = file_object.read(100)
+                    if len(data) > 0 :
+                        file_object.write("\n")
+                    file_object.write(num)
+
+                return False
+
         except:
-            break
+            return True
 
-def saveLog(num):
-    with open("log.txt", "a+") as file_object:
-        file_object.seek(0)
-        data = file_object.read(100)
-        if len(data) > 0 :
-            file_object.write("\n")
-        file_object.write("num")
+def sendMsg():
+    try:
+        button = browser.find_element_by_class_name('_1E0Oz')
+        button.click()
 
+        while True:
+            try:
+                browser.find_element_by_xpath("//span[@data-testid='msg-time']")
+            except:
+                return True
+    except:
+        return False
 
 
 def vai(numberslist, message):
@@ -107,40 +128,21 @@ def vai(numberslist, message):
             try:
                 browser.get(genLink(num, msg))
                 #browser.save_screenshot("num.png")
-                ctrl = True
 
-                while ctrl:
-                    try:     
-                        a = browser.find_element_by_class_name('_3SRfO')
-                        ctrl = False
-                        a = browser.find_element_by_class_name('_1ENRV')
-                        ctrl = True
-                        print("Incorrect header! Check log.")
-                        saveLog(num)
-                    except:
-                        try:
-                            button = browser.find_element_by_class_name('_1E0Oz')
-                            button.click()
-
-                            waitForSending()
-
-                            print("Sent!")
-
-                            delForMe(lastMessage())
-
-                            time.sleep(30)
-                            ctrl = False
-                        except:
-                            pass
-                        
+                while startCheck(num):
+                    if sendMsg():
+                        print("Sent!")
+                        delForMe(lastMessage())
+                        browser.get("https://web.whatsapp.com/")
+                        time.sleep(30)
+                        break                 
             
                 num = fp.readline()
                 cnt += 1
 
             except:
                 pass
-                
-                
-                
+
+
 
     #browser.close()

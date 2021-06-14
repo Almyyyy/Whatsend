@@ -76,7 +76,7 @@ def start():
         print("not ok")
         #startbtn["state"] = "disabled"
     else:
-        vai(filedir.get(), txt.get("1.0", "end-1c"));
+        vai(filedir.get(), txt.get("1.0", "end-1c"))
         print(filedir.get())
         print(txt.get("1.0", "end-1c"))
         #startbtn["state"] = "normal"
