@@ -149,8 +149,4 @@ def mainThread(numberslist, message):
                 pass
 
 
-
     #browser.close()
-
-
-
