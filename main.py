@@ -72,7 +72,6 @@ space2.grid(column=0, row=5)
 
 
 
-
 #start button
 def startStop():
     if filedir.get() and len(txt.get("1.0", "end-1c")) > 0 and startbtn["text"] == "Start":
