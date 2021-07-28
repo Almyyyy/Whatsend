@@ -66,7 +66,7 @@ def delForMe(xpath):
         hover = ActionChains(browser).move_to_element(div)                                                                              
         hover.perform()
 
-        arrow = browser.find_element_by_class_name('QhSbI')
+        arrow = browser.find_element_by_class_name('_3e9My')
         arrow.click()
 
         delbtn = browser.find_element_by_xpath("/html/body/div/div[1]/span[4]/div/ul/div/li[5]")
@@ -100,7 +100,7 @@ def startCheck(num):
 
 def sendMsg():
     try:
-        button = browser.find_element_by_class_name('_1E0Oz')
+        button = browser.find_element_by_class_name('_4sWnG')
         button.click()
 
         while True:
