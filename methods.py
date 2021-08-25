@@ -69,7 +69,7 @@ def delForMe(xpath):
         arrow = browser.find_element_by_class_name('_3e9My')
         arrow.click()
 
-        delbtn = browser.find_element_by_xpath("/html/body/div/div[1]/span[4]/div/ul/div/li[5]")
+        delbtn = browser.find_element_by_xpath("/html/body/div/div[1]/span[4]/div/ul/div/li[6]/div[1]")
         delbtn.click()
 
         delforme = browser.find_element_by_xpath("/html/body/div/div[1]/span[2]/div[1]/span/div[1]/div/div/div/div/div[3]/div/div[1]/div")
@@ -80,10 +80,10 @@ def delForMe(xpath):
 def startCheck(num):
     while True:
         try:
-            browser.find_element_by_class_name('_3SRfO') #generic error banner
+            browser.find_element_by_class_name('_3J6wB') #generic error banner
 
             try:
-                browser.find_element_by_class_name('_1ENRV') #signal loss banner
+                browser.find_element_by_class_name('_1bpDE') #signal loss banner
 
             except:
                 with open("log.txt", "a+") as file_object:
