@@ -1,9 +1,11 @@
+from tkinter.ttk import Progressbar
 from tkinter import scrolledtext
 from tkinter import filedialog
-from tkinter.ttk import Progressbar
 from tkinter import ttk
 from tkinter import *
+
 from methods import *
+import methods
 
 import threading
 
@@ -78,8 +80,10 @@ def startStop():
         startbtn["text"] = "Stop"
         x = threading.Thread(target=mainThread, args=(filedir.get(), txt.get("1.0", "end-1c")))
         x.start()
+        methods.stop_threads = False
     elif startbtn["text"] == "Stop":
         startbtn["text"] = "Start"
+        methods.stop_threads = True
         #todo: kill thread safely
         
 startbtn = Button(tab1, text="Start", width=10, command=startStop)
@@ -93,7 +97,7 @@ space3.grid(column=0, row=7)
 
 bar = Progressbar(tab1, length=350)
 bar.grid(column=0, row=8, columnspan=2)
-bar['value'] = 50
+bar['value'] = methods.progress
 #tab1.update_idletasks()
 
 
