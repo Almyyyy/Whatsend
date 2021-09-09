@@ -7,6 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 
+stop_threads = False
+progress = 0.01
 
 browser = webdriver.Chrome(executable_path=r"webdrivers\chrome\windows\chromedriver.exe")
 browser.get("https://web.whatsapp.com/")
@@ -111,7 +113,6 @@ def sendMsg():
     except:
         return False
 
-
 def mainThread(numberslist, message):
     MAX = 0
     file = open(numberslist, "r")
@@ -133,13 +134,20 @@ def mainThread(numberslist, message):
             try:
                 browser.get(genLink(num, msg))
                 #browser.save_screenshot("num.png")
-                print("Progress: " + str(100 / MAX * cnt) + "%")
+                progress = round(100 / MAX * cnt, 2)
+                print("Progress: " + str(progress) + "%") 
                 while startCheck(num):
                     if sendMsg():
                         print("Sent!")
                         delForMe(lastMessage())
                         browser.get("https://web.whatsapp.com/")
-                        time.sleep(30)
+                        
+                        start = time.time()
+                        while (time.time() - start < 30): # 30 seconds
+                            if stop_threads: 
+                                #browser.close()
+                                return
+
                         break                 
             
                 num = fp.readline()
@@ -147,6 +155,3 @@ def mainThread(numberslist, message):
 
             except:
                 pass
-
-
-    #browser.close()
