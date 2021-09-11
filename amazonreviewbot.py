@@ -161,6 +161,22 @@ def mainThread(numberslist, message):
             except:
                 pass
 
+def archiveit():
+    while True:
+        try:
+            actions = ActionChains(browser) 
+            actions.key_down(Keys.CONTROL)
+            actions.key_down(Keys.ALT)
+            actions.key_down(Keys.SHIFT)
+            actions.send_keys("e")
+            actions.key_up(Keys.CONTROL)
+            actions.key_up(Keys.ALT)
+            actions.key_up(Keys.SHIFT)
+            actions.perform()
+            break
+        except:
+            pass
+
 def main():
     input("Premi INVIO dopo il login in WhatsApp Web")
 
@@ -189,15 +205,7 @@ def main():
                             print("Sent!")
                             #delForMe(lastMessage())
 
-                            actions = ActionChains(browser) 
-                            actions.key_down(Keys.CONTROL)
-                            actions.key_down(Keys.ALT)
-                            actions.key_down(Keys.SHIFT)
-                            actions.send_keys("e")
-                            actions.key_up(Keys.CONTROL)
-                            actions.key_up(Keys.ALT)
-                            actions.key_up(Keys.SHIFT)
-                            actions.perform()
+                            archiveit()
 
                             #browser.get("https://web.whatsapp.com/")
                             
