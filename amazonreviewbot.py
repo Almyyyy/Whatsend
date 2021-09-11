@@ -203,7 +203,6 @@ def main():
                     while startCheck():
                         if sendMsg():
                             print("Sent!")
-                            #delForMe(lastMessage())
 
                             archiveit()
 
